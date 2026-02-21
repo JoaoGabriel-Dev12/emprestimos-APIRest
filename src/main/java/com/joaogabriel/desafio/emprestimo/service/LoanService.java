@@ -15,20 +15,15 @@ public class LoanService {
 
         if(person.getIncome() <= 3000.0) {
             loans.add(new Loan(TypeLoan.PERSONAL, TypeLoan.PERSONAL.getInterest_rate()));
+            loans.add(new Loan(TypeLoan.GUARANTEED, TypeLoan.GUARANTEED.getInterest_rate()));
         }
         if(person.getIncome() > 3000.0 && person.getIncome() < 5000.0 && 
         person.getAge() < 30 && person.getLocation().equals("SP")) {
             loans.add(new Loan(TypeLoan.PERSONAL, TypeLoan.PERSONAL.getInterest_rate()));
+            loans.add(new Loan(TypeLoan.GUARANTEED, TypeLoan.GUARANTEED.getInterest_rate()));
         }
         if(person.getIncome() >= 5000.0) {
             loans.add(new Loan(TypeLoan.CONSIGNMENT, TypeLoan.CONSIGNMENT.getInterest_rate()));
-        }
-        if(person.getIncome() <= 3000) {
-            loans.add(new Loan(TypeLoan.GUARANTEED, TypeLoan.GUARANTEED.getInterest_rate()));
-        }
-        if(person.getIncome() > 3000.0 && person.getIncome() < 5000.0 && 
-        person.getAge() < 30 && person.getLocation().equals("SP")) {
-            loans.add(new Loan(TypeLoan.GUARANTEED, TypeLoan.GUARANTEED.getInterest_rate()));
         }
     }
 }
