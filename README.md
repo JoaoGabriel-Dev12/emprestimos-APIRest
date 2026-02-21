@@ -33,3 +33,36 @@ Cada tipo de emprétimo possui uma taxa:
 - Empréstimo pessoal, taxa de 4%
 - Empréstimo consignado, taxa de 3%
 - Empréstimo com garantia, taxa de 2%
+
+### ✅ Exemplo de uso
+POST
+```
+{
+    "age": 26,
+    "cpf": "275.484.389-23",
+    "name": "Joao Gabriel",
+    "income": 4000.00,
+    "location": "SP"
+}
+```
+```
+{
+	"age": 26,
+	"cpf": "275.484.389-23",
+	"name": "Joao Gabriel",
+	"income": 4000.0,
+	"location": "SP",
+	"loans": [
+		{
+			"type": "PERSONAL",
+			"interest_rate": 4
+		},
+		{
+			"type": "GUARANTEED",
+			"interest_rate": 3
+		}
+	]
+}
+```
+
+Na requisição do POST é retornado o verbo HTTP 200 OK
